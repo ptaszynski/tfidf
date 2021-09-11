@@ -1,4 +1,4 @@
-# tfidf
+# tf\*idf calculator
 
 This is a simple tf\*idf calculator. It will calculate tf\*idf for each word in each document.
 
