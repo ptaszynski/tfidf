@@ -16,5 +16,5 @@ This is a super simple tf\*idf calculator. It will calculate tf\*idf for each wo
    
    **perl tfidf_calc_mc.pl \*.txt**  
    
-   if for the multicore version.
+   for the multicore version.
 
