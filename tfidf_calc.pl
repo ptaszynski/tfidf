@@ -15,8 +15,6 @@ use utf8::all;
 # print "thanks, you gave me $numArgs command-line arguments:\n";
 
 my @filenames;
-# my @filenameswithext
-my %wordhash;
 
 # find all filenames from arguments
 foreach my $argnum (0 .. $#ARGV) {
@@ -40,27 +38,18 @@ foreach my $argnum (0 .. $#ARGV) {
     foreach my $wordy (@$filename){
       $uniqwords{$filename}{$wordy}++;
     }
-
     next;
 }
 
 foreach my $file (@filenames) {
   my %tfidfhash;
-
-  # foreach my $word (@$file){
   foreach my $word (keys %{$uniqwords{$file}}){
     my $tf = $uniqwords{$file}{$word}/@$file;
-    # print "occurences of word \"$word\" in file \"$file\" is $counttf{$word}\n";
-    # print "all words in file \"$file\" is $allwords\n";
-    # print "TF for word \"$word\" in file \"$file\" is $tf\n";
-
     my $found=0;
     foreach $tempfilename (@filenames) {
-      # USES TRICK (PREMAPPED HASH) FROM LINE 44
+      # USES TRICK (PREMAPPED HASH) FROM LINE 37
       $found++ if $$tempfilename->{ $word };
     }
-    # print "word $word appears in $found documents\n" if $found>1;
-    # print "number of all files is $allfiles\n";
 
     my $idf = log(@filenames/$found);
     # # print "IDF for word \"$word\" in file \"$file\" is $idf\n";
