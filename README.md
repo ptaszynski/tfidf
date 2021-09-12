@@ -2,7 +2,7 @@
 
 This is a super simple tf\*idf calculator. It will calculate tf\*idf for each word in each document and save the results in separate files accordingly.
 
-1. Dependencies. Before using you will need to install two Perl modules:
+1. Dependencies. Before using you will need to install the following Perl modules:
    - **utf8::all**  if you use the normal version, and additionally:
    - **MCE**, **MCE::Loop** if you want to use multicore version.
    
