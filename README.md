@@ -1,6 +1,6 @@
 # tf\*idf calculator
 
-This is a super simple tf\*idf calculator. It will calculate tf\*idf for each word in each document and save the results in separate files accordingly.
+This is a super simple (and pretty fast) tf\*idf calculator. It will calculate tf\*idf for each word in each document and save the results in separate files accordingly.
 
 1. Dependencies. Before using you will need to install the following Perl modules:
    - **utf8::all** and **List::Util**  if you use the normal version, and additionally:
