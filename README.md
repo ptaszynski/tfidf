@@ -36,7 +36,7 @@ I tested three versions of the script that use Perl's multicore engine:
 - tfidf_calc_mc_files.pl  -  this version simultaneously takes all provided files provided. 
 - tfidf_calc_mc_files_words.pl  -  this version simultaneously takes both all provided files and all unique words in each file (like a double fork). 
 
-Below are the benchmarking results for speed of processing 1 file, 10 files, and 100 files. The overall conclusion is that taking all words simultaneusly is the best option cost-performance-wise. Double fork is not very efficient (as you would expect) if you have more than 100 documents, while taking simultaneusly all files is not very efficient in general.
+Below are the benchmarking results for speed of processing 1 file, 10 files, and 100 files. The overall conclusion is that taking all words simultaneusly is the best option cost-performance-wise. Double fork is not very efficient (as you would expect) if you have 100 documents or more, while taking simultaneusly all files is not very efficient in general.
 
 ### Multicore benchmark results for 1 file 
 ```
