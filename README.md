@@ -15,7 +15,7 @@ Before using you will need to install the following Perl modules:
 Prepare each document in separate file. Make sure the documents are properly tokenized (e.g., words and punctuation are separated by spaces). You can process all txt files in present working folder with the following command. 
 
 ```
-   perl tfidf_calc.pl *.txt
+perl tfidf_calc.pl *.txt
 ```
 
 ## 3. Weighting schemes.
@@ -23,9 +23,10 @@ Prepare each document in separate file. Make sure the documents are properly tok
 You can choose: 1) traditional tf\*idf, 2) Okapi BM25, or 3) BM25+ weighting schemes. BM25 adds document length into consideration, while BM25+ solves the problem where BM25 cannot compute proper weight for very long documents. Usage, accordingly:
 
 ```
-   perl tfidf_calc.pl -bm25 *.txt
-   
-   perl tfidf_calc.pl -bm25plus *.txt
+perl tfidf_calc.pl -bm25 *.txt
+```
+```
+perl tfidf_calc.pl -bm25plus *.txt
 ```
 
 ## 4. Multicore versions.
