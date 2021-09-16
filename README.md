@@ -8,7 +8,7 @@ Before using you will need to install the following Perl modules:
    - **utf8::all** and **List::Util**  if you use the normal version, and additionally:
    - **MCE**, **MCE::Loop** if you want to use multicore version.
    
-   Multicore version can be faster if you have a large number of documents (>~100).
+   Multicore version can be faster if you have a large number of documents (>~10).
 
 ## 2. Usage.
 
