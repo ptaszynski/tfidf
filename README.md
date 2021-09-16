@@ -31,4 +31,34 @@ perl tfidf_calc.pl -bm25plus *.txt
 
 ## 4. Multicore versions.
 
-I tested three versions of the script that use Perl's multicore engine. 
+I tested three versions of the script that use Perl's multicore engine:
+- tfidf_calc_mc_words.pl  -  this version simultaneously takes all unique words in file. 
+- tfidf_calc_mc_files.pl  -  this version simultaneously takes all provided files provided. 
+- tfidf_calc_mc_files_words.pl  -  this version simultaneously takes both all provided files and all unique words in each file (like a double fork). 
+
+Below are the benchmarking results for speed of processing 1 file, 10 files, and 100 files. The overall conclusion is that taking all words simultaneusly is the best option cost-performance-wise. Double fork is not very efficient (as you would expect) if you have more than 100 documents, while taking simultaneusly all files is not very efficient in general.
+
+### Multicore benchmark results for 1 file 
+```
+                                 Rate tfidf_calc_mc_files tfidf_calc_mc_words tfidf_calc_mc_files_words tfidf_calc
+tfidf_calc_mc_files       210928156/s                  --                 -0%                       -7%        -8%
+tfidf_calc_mc_words       211530235/s                  0%                  --                       -7%        -7%
+tfidf_calc_mc_files_words 227757632/s                  8%                  8%                        --        -0%
+tfidf_calc                228422117/s                  8%                  8%                        0%         --
+```
+### Multicore benchmark results for 10 files 
+```
+                                 Rate tfidf_calc tfidf_calc_mc_files tfidf_calc_mc_words tfidf_calc_mc_files_words
+tfidf_calc                207960970/s         --                 -5%                -11%                      -12%
+tfidf_calc_mc_files       219996677/s         6%                  --                 -6%                       -7%
+tfidf_calc_mc_words       233991201/s        13%                  6%                  --                       -1%
+tfidf_calc_mc_files_words 235470822/s        13%                  7%                  1%                        --
+```
+### Multicore benchmark results for 100 files 
+```
+                                 Rate tfidf_calc tfidf_calc_mc_files_words tfidf_calc_mc_files tfidf_calc_mc_words
+tfidf_calc                208945748/s         --                       -3%                 -4%                 -4%
+tfidf_calc_mc_files_words 216463105/s         4%                        --                 -0%                 -1%
+tfidf_calc_mc_files       217209498/s         4%                        0%                  --                 -0%
+tfidf_calc_mc_words       218061234/s         4%                        1%                  0%                  --
+```
