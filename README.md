@@ -12,11 +12,6 @@ This is a super simple (and pretty fast) tf\*idf calculator. It will calculate t
 
    **perl tfidf_calc.pl \*.txt**
    
-   or
-   
-   **perl tfidf_calc_mc.pl \*.txt**  
-   
-   for the multicore version.
 
 3. Weighting schemes. You can choose: 1) traditional tf\*idf, 2) Okapi BM25, or 3) BM25+ weighting schemes. BM25 adds document length into consideration, while BM25+ solves the problem where BM25 cannot compute proper weight for very long documents. Usage, accordingly:
 
@@ -24,6 +19,4 @@ This is a super simple (and pretty fast) tf\*idf calculator. It will calculate t
    
    **perl tfidf_calc.pl -bm25plus \*.txt**
    
-   **perl tfidf_calc_mc.pl -bm25 \*.txt**
-   
-   **perl tfidf_calc_mc.pl -bm25plus \*.txt**
+4. Multicore versions. 
