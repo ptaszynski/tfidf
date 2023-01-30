@@ -1,4 +1,4 @@
-# This one is just for fun. It was generated with ChatGPT. 
+# This one is just for fun. It was rewritten into Python using ChatGPT. 
 #
 import os
 import math
